@@ -13,6 +13,10 @@ var responder = function (req, res) {
   res.sendStatus(code);
 };
 
+app.all('/', function (req, res) {
+  res.redirect('https://github.com/aisaacs/errorize');
+});
+
 app.get('/:requestedCode', responder);
 app.post('/:requestedCode', responder);
 app.put('/:requestedCode', responder);
